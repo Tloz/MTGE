@@ -7,6 +7,8 @@ enum class Color{None, Black, Blue, Green, Red, White};
 enum class Mana{Unco, Isle, Mountain, Swamp, Forest, Plain};
 enum class Variety{Common, Unco, Rare};
 
+class Player;
+
 class Card
 {
     typedef struct ID
@@ -22,6 +24,8 @@ class Card
     Variety variety;
     bool funcard;
     /* Color color; Do we really need this?*/
+
+    void tap();
 
 };
 
@@ -41,8 +45,8 @@ class Creature : public Spell
     std::string type;
     uint8_t atk;
     uint8_t def;
-
-    void tap();
+    
+    void attack(Player p);
 };
 
 class Artifact : public Spell
@@ -54,11 +58,3 @@ class CreatureArtifact : public Creature, public Artifact
 {
 
 };
-
-class G_Card : public Card
-{
-    /*
-     * graphical card
-     */
-};
-
