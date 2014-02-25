@@ -26,14 +26,17 @@ class Player
     std::vector<Card> m_graveyard;
     std::deque<Card> m_library;
     std::deque<Card> m_hand;
+    std::vector<Land> m_manaPool;
+    std::vector<Spell> m_battlefield;
 
-    void draw(int number = 1);
+    Card draw(int number = 1);
     void discardFromHand(int number = 1);
     void discardFromLibrary(int number = 1);
     void shuffleLibrary();
     void shuffleHand();
     void putOnTopOfLibrary(Card card);
     void putOnBottomOfLibrary(Card card);
+
 };
 
 class Game
@@ -41,6 +44,5 @@ class Game
     std::vector<Player> players;
     std::stack<Card> stack;
     std::deque<Card> exile;
-    //Battlefield
     uint8_t turns;
 };
