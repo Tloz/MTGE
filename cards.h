@@ -69,7 +69,7 @@ class Enchantment : public Spell, public Permanent
 
 };
 
-class Instant: : public Spell
+class Instant: public Spell
 {
 
 };
